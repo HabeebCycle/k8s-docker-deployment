@@ -35,7 +35,7 @@ public class StateCodeService {
     public String stateToCode(String state){
         String value = "";
         try {
-            String response = requestProcessedData(serverUrl+"/readDataForState");
+            String response = requestProcessedData(serverUrl+"/read-state-data");
             JSONArray jsonArray = new JSONArray(response);
 
             for(int n = 0; n < jsonArray.length(); n++){
