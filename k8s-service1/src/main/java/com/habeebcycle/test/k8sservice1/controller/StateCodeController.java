@@ -18,8 +18,8 @@ public class StateCodeController {
     @GetMapping("/")
     public String homePage(){
         return "Welcome to our API service. I am responsible for America states data."+
-        "\n\nYou can append /read-code-data to read state code. It returns state objects"+
-        "\nYou can append /read-state-data to read state with its correponding code. It returns array of objects";
+        "<br/><br/>You can append /read-code-data to read state code. It returns state objects"+
+        "<br/>You can append /read-state-data to read state with its correponding code. It returns array of objects";
     }
 
     @GetMapping("/read-code-data")
