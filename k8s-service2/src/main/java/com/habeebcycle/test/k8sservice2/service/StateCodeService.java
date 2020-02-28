@@ -2,12 +2,14 @@ package com.habeebcycle.test.k8sservice2.service;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class StateCodeService {
-    private final String serverUrl = "http://localhost:9090";
+    @Value("${habeebcycle.k8s.service1.link}")
+    private String serverUrl; // = "http://localhost:9090";
 
     public String requestProcessedData(String url){
         RestTemplate request = new RestTemplate();

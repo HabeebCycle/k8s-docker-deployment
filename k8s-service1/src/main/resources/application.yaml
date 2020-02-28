@@ -1,2 +1,6 @@
+spring:
+  application:
+    name: k8s-service1
+
 server:
   port: 9090

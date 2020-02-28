@@ -1,2 +1,11 @@
+spring:
+  application:
+    name: k8s-service2
+
 server:
   port: 9091
+
+habeebcycle:
+  k8s:
+    service1:
+      link: ${HABEEBCYCLE_K8S_SERVICE1_LINK}
