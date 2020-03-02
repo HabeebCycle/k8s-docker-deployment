@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: k8s-config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/HabeebCycleDevelopment/k8s-config-repo.git
+
+
+server:
+  port: 8888

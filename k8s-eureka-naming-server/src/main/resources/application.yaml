@@ -1,0 +1,12 @@
+eureka:
+    client:
+        fetch-registry: false
+        register-with-eureka: false
+
+server:
+    port: 8761
+
+spring:
+    application:
+        name: k8s-eureka-naming-server
+
