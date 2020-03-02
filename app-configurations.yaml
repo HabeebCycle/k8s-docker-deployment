@@ -1,0 +1,14 @@
+spring:
+    cloud:
+        config:
+            uri: http://localhost:8888
+
+eureka:
+    client:
+        service-url:
+            default-zone: http://localhost:8761/eureka
+
+habeebcycle:
+    k8s:
+        service1:
+            link: http://localhost:9090
