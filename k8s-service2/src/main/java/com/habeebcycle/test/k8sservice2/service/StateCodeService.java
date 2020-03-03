@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 public class StateCodeService {
-    @Value("${habeebcycle.k8s.service1.link}")
+    @Value("${habeebcycle.k8s.service1.link:http://k8s-service1}")
     private String serverUrl; // = "http://localhost:9090";
 
     public String requestProcessedData(String url){

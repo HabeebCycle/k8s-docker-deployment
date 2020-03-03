@@ -1,12 +1,13 @@
 spring:
   application:
-    name: k8s-config-server
+    name: k8s-service2
 
   cloud:
     config:
-      server:
-        git:
-          uri: https://github.com/HabeebCycleDevelopment/k8s-config-repo.git
+      discovery:
+        enabled: true
+        serviceId: CONFIGSERVER
+      failFast: true
 
 eureka:
   client:
@@ -14,4 +15,4 @@ eureka:
           defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
 
 server:
-  port: 8888
+  port: 9091

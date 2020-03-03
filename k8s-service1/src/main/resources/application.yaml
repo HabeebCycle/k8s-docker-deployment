@@ -2,5 +2,10 @@ spring:
   application:
     name: k8s-service1
 
+eureka:
+  client:
+      serviceUrl:
+          defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+
 server:
   port: 9090
