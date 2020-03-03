@@ -8,6 +8,7 @@ services:
   k8s-config-server:
     image: habeebcycle/k8s-config-server:v1
     environment:
+      - EUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
     depends_on:
@@ -18,6 +19,7 @@ services:
   k8s-service1:
     image: habeebcycle/k8s-service1:v1
     environment:
+      - EUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
     depends_on:
@@ -29,11 +31,14 @@ services:
   k8s-service2:
     image: habeebcycle/k8s-service2:v1
     environment:
+      - EUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
+      - K8S_SERVICE1_LINK=http://k8s-service1
       - JAVA_OPTS=
         -DEUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
     restart: on-failure
     depends_on:
       - k8s-eureka-naming-server
       - k8s-config-server
+      - k8s-service1
     ports:
       - 9091:9091
