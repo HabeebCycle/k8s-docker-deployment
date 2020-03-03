@@ -2,20 +2,35 @@ package com.habeebcycle.test.k8sservice2.service;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+//import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 public class StateCodeService {
-    @Value("${habeebcycle.k8s.service1.link:http://k8s-service1}")
-    private String serverUrl; // = "http://localhost:9090";
+    
+    @Value("${k8s.service1.link}")
+    private String serverUrl; // = "http://k8s-service1";
+
+    private final RestTemplate restTemplate;
+    //private final WebClient.Builder webBuilder;
+
+    @Autowired
+    public StateCodeService(RestTemplate restTemplate/*, WebClient.Builder webBuilder*/){
+        this.restTemplate = restTemplate;
+        //this.webBuilder = webBuilder;
+    }
 
     public String requestProcessedData(String url){
-        RestTemplate request = new RestTemplate();
-        String result = request.getForObject(url, String.class);
+        String result = restTemplate.getForObject(url, String.class);
         System.out.print(url);
+
+        //String result = webBuilder.build().get().uri(url).retrieve().bodyToMono(String.class).block();
+
         return (result);
+
     }
 
     public String codeToState(String code){

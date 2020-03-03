@@ -1,6 +1,10 @@
 spring:
   application:
     name: k8s-service1
+  
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER:http://localhost:8888}
 
 eureka:
   client:

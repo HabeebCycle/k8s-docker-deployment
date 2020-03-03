@@ -6,7 +6,7 @@ spring:
     config:
       discovery:
         enabled: true
-        serviceId: CONFIGSERVER
+        serviceId: K8S-CONFIG-SERVER
       failFast: true
 
 eureka:
