@@ -18,6 +18,7 @@ services:
     image: habeebcycle/k8s-api-gateway:v1
     environment:
       - EUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
+    restart: on-failure
     depends_on:
       - k8s-eureka-naming-server
       - k8s-config-server
@@ -28,6 +29,7 @@ services:
     image: habeebcycle/k8s-service1:v1
     environment:
       - EUREKA_SERVER=http://k8s-eureka-naming-server:8761/eureka
+    restart: on-failure
     depends_on:
       - k8s-eureka-naming-server
       - k8s-config-server
