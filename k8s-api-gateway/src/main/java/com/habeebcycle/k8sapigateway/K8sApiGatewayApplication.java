@@ -1,17 +1,17 @@
-package com.habeebcycle.k8sconfigserver;
+package com.habeebcycle.k8sapigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-@EnableConfigServer
 @EnableEurekaClient
-public class K8sConfigServerApplication {
+@EnableZuulProxy
+public class K8sApiGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(K8sConfigServerApplication.class, args);
+		SpringApplication.run(K8sApiGatewayApplication.class, args);
 	}
 
 }

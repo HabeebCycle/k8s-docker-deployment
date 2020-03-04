@@ -1,0 +1,6 @@
+server:
+    port: 9091
+
+spring:
+    application:
+        name: k8s-service2    

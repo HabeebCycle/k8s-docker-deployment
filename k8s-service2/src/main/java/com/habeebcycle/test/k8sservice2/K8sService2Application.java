@@ -36,7 +36,7 @@ public class K8sService2Application implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {		
-		System.out.println(developerConfig.getDetails());
+		System.out.println("FROM K8S_SERVICE_2_CLOUD_CONFIG:\n" + developerConfig.getDetails());
 		
 	}
 

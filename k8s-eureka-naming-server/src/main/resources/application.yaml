@@ -3,6 +3,14 @@ eureka:
         fetch-registry: false
         register-with-eureka: false
 
+#Managing the logging
+#logging:
+#    level:
+#        com:
+#            netflix:
+#                eureka: OFF
+#                discovery: OFF
+
 server:
     port: 8761
 

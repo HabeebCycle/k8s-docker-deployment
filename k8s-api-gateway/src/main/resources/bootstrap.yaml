@@ -5,8 +5,10 @@ spring:
         enabled: true
         serviceId: K8S-CONFIG-SERVER
       failFast: true
-
+  
 eureka:
   client:
-      serviceUrl:
-          defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+          
+          

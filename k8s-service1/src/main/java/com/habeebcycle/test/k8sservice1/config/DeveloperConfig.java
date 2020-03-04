@@ -1,4 +1,4 @@
-package com.habeebcycle.test.k8sservice2.config;
+package com.habeebcycle.test.k8sservice1.config;
 
 import java.util.Map;
 

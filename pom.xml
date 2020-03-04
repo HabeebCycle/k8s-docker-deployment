@@ -13,6 +13,7 @@
 	<modules>
 		<module>k8s-eureka-naming-server</module>
 		<module>k8s-config-server</module>
+		<module>k8s-api-gateway</module>
 		<module>k8s-service1</module>
 		<module>k8s-service2</module>
 	</modules>

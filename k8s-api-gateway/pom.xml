@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.4.RELEASE</version>
+		<version>2.2.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.habeebcycle.test</groupId>
-	<artifactId>k8s-service1</artifactId>
+	<groupId>com.habeebcycle</groupId>
+	<artifactId>k8s-api-gateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>k8s-service1</name>
-	<description>Testing spring boot microservices, docker and kubernetes</description>
+	<name>k8s-api-gateway</name>
+	<description>Zuul API gateway for our microservices</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -21,22 +21,12 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 		</dependency>
 
 		<dependency>
@@ -77,7 +67,7 @@
 				<version>2.1.0</version>
         		<configuration>
           			<to>
-						<image>docker.io/habeebcycle/k8s-service1:v1</image>
+						<image>docker.io/habeebcycle/k8s-api-gateway:v1</image>
 						<!--
 						<auth>
 							<username>${USERNAME}</username>
