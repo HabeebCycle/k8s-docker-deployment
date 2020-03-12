@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: k8s-eureka-naming-server
+  name: k8s-eureka-naming-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-eureka-naming-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: k8s-eureka-naming-server
+    spec:
+      containers:
+      - image: habeebcycle/k8s-eureka-naming-server:v1
+        name: k8s-eureka-naming-server
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: k8s-eureka-naming-server
+  name: k8s-eureka-naming-server
+spec:
+  ports:
+  - name: 8761-8761
+    port: 8761
+    protocol: TCP
+    targetPort: 8761
+  selector:
+    app: k8s-eureka-naming-server
+  type: ClusterIP
+status:
+  loadBalancer: {}

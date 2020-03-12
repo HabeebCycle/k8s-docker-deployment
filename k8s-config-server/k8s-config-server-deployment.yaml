@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: k8s-config-server
+  name: k8s-config-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-config-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: k8s-config-server
+    spec:
+      containers:
+      - image: habeebcycle/k8s-config-server:v1
+        name: k8s-config-server
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: k8s-config-server
+  name: k8s-config-server
+spec:
+  ports:
+  - name: 8888-8888
+    port: 8888
+    protocol: TCP
+    targetPort: 8888
+  selector:
+    app: k8s-config-server
+  type: ClusterIP
+status:
+  loadBalancer: {}
